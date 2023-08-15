@@ -1,7 +1,6 @@
-const core = require("@actions/core");
-const axios = require("axios");
-const convertedThumbnail = require("../utils/convertImage");
-
+import core from "@actions/core";
+import axios from "axios";
+import convertedThumbnail from "../utils/convertImage.js";
 
 const processDevFeed = async (username) => {
   let max_size = Number.parseInt(core.getInput('max_limit')) || 4;
@@ -38,7 +37,6 @@ const processDevFeed = async (username) => {
         thumbnail
       });
     }
-    console.log(DevArticles);
 
     return DevArticles;
   } catch (error) {
@@ -48,4 +46,4 @@ const processDevFeed = async (username) => {
 };
 
 
-module.exports = processDevFeed;
+export default processDevFeed;

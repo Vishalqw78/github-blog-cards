@@ -1,5 +1,5 @@
-const axios = require('axios');
-const xml2js = require('xml2js');
+import axios from 'axios';
+import xml2js from 'xml2js';
 
 const fetchAndParseXML=async(url)=> {
   try {
@@ -22,4 +22,4 @@ const fetchAndParseXML=async(url)=> {
   }
 }
 
-module.exports = fetchAndParseXML;
+export default fetchAndParseXML;

@@ -1,6 +1,7 @@
 {
   "name": "github-blog-cards",
   "version": "1.0.0",
+  "type": "module",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -19,6 +20,7 @@
   "dependencies": {
     "@actions/core": "^1.10.0",
     "axios": "^1.4.0",
-    "http": "^0.0.1-security"
+    "http": "^0.0.1-security",
+    "xml2js": "^0.6.2"
   }
 }

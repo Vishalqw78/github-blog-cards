@@ -1,7 +1,6 @@
-const core = require("@actions/core");
-const axios = require("axios");
-const convertedThumbnail = require("./utils/convertImage");
-
+import core from "@actions/core";
+import axios from "axios";
+import convertedThumbnail from "../utils/convertImage.js";
 
 const processMediumFeed = async (username) => {
   let max_size = Number.parseInt(core.getInput('max_limit')) || 4;
@@ -45,7 +44,6 @@ const processMediumFeed = async (username) => {
         thumbnail
       });
     }
-
     return MediumArticles;
   } catch (error) {
     console.log(error.message);
@@ -53,4 +51,4 @@ const processMediumFeed = async (username) => {
   }
 };
 
-module.exports = processMediumFeed;
+export default processMediumFeed;

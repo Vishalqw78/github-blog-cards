@@ -1,4 +1,4 @@
-const axios = require('axios');
+import axios from 'axios';
 
 const convertedThumbnail = async (thumbnailUrl)=>{
     const { data: thumbnailRaw } = await axios.get(thumbnailUrl, {
@@ -13,4 +13,4 @@ const convertedThumbnail = async (thumbnailUrl)=>{
     return convertedThumbnail;
   }
 
-module.exports = convertedThumbnail;
+export default convertedThumbnail;
