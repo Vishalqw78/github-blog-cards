@@ -1,7 +1,7 @@
 import core from "@actions/core";
 import axios from "axios";
-import fetchAndParseXML from './utils/fetchNParseXML.js';
-import convertedThumbnail from "./utils/convertImage.js";
+import fetchAndParseXML from '../utils/fetchNParseXML.js';
+import convertedThumbnail from "../utils/convertImage.js";
 
 const processHashnodeFeed = async (feedurl) => {
   let max_size = Number.parseInt(core.getInput('max_limit')) || 10;

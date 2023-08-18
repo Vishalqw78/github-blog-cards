@@ -1,6 +1,6 @@
 import core from "@actions/core";
 import axios from "axios";
-import convertedThumbnail from "./utils/convertImage.js";
+import convertedThumbnail from "../utils/convertImage.js";
 
 
 const processMediumFeed = async (username) => {
