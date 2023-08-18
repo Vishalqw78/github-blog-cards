@@ -1,10 +1,10 @@
 import core from "@actions/core";
 import axios from "axios";
-import fetchAndParseXML from '../utils/fetchNParseXML.js';
-import convertedThumbnail from "../utils/convertImage.js";
+import fetchAndParseXML from './utils/fetchNParseXML.js';
+import convertedThumbnail from "./utils/convertImage.js";
 
 const processHashnodeFeed = async (feedurl) => {
-  let max_size = Number.parseInt(core.getInput('max_limit')) || 4;
+  let max_size = Number.parseInt(core.getInput('max_limit')) || 10;
   const HashnodeImg = "";
 
   try {
@@ -31,26 +31,36 @@ const processHashnodeFeed = async (feedurl) => {
       const item = items[i];
       const url = item.link;
       const title = item.title;
+      const author = item.author;
       const date = item.pubDate;
       let thumbnail;
       if(thumbnailArray[i]!=""){
-       thumbnail = await convertedThumbnail(thumbnailArray[i]);
-}
-else{
-     thumbnail = await convertedThumbnail(HashnodeImg);
-}
-HashnodeArticles.push({
-        index: i + 1,
+        thumbnail = await convertedThumbnail(thumbnailArray[i]);
+ }
+ else{
+      thumbnail = await convertedThumbnail(HashnodeImg);
+ }
+
+      const Predescription = item.description;
+      //const withoutFigcaption = Predescription.replace(/<figcaption>.*?<\/figcaption>/gs, '');
+      const textContent = Predescription.replace(/<[^>]+>/g, '');
+      const words = textContent.split(' ');
+      const description = words.slice(0, 20).join(' ') + "...";
+
+      
+
+  HashnodeArticles.push({
         url,
         title,
         date,
-        thumbnail
-      });
+        author,
+        thumbnail,
+        description,
+  });
     }
     return HashnodeArticles;
   } catch (error) {
-    console.log(error.message);
-    return [];
+    throw new Error('Username/blogname does not exist or match with site name');
   }
 };
 

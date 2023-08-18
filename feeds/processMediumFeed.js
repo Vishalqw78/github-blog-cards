@@ -1,9 +1,10 @@
 import core from "@actions/core";
 import axios from "axios";
-import convertedThumbnail from "../utils/convertImage.js";
+import convertedThumbnail from "./utils/convertImage.js";
+
 
 const processMediumFeed = async (username) => {
-  let max_size = Number.parseInt(core.getInput('max_limit')) || 4;
+  let max_size = Number.parseInt(core.getInput('max_limit')) || 10;
   let MediumImg="";
 
   try {
@@ -26,6 +27,7 @@ const processMediumFeed = async (username) => {
       const item = items[i];
       const url = item.link;
       const title = item.title;
+      const author = item.author;
       const date = item.pubDate;
       let thumbnail;
       if(item.thumbnail!=""){
@@ -36,18 +38,26 @@ const processMediumFeed = async (username) => {
        thumbnail = await convertedThumbnail(MediumImg);
   }
 
+      const Predescription = item.description;
+      const withoutFigcaption = Predescription.replace(/<figcaption>.*?<\/figcaption>/gs, '');
+      const textContent = withoutFigcaption.replace(/<[^>]+>/g, '');
+      const words = textContent.split(' ');
+      const description = words.slice(0, 20).join(' ') + "...";
+
+      
+
   MediumArticles.push({
-        index: i + 1,
         url,
         title,
         date,
-        thumbnail
-      });
+        author,
+        thumbnail,
+        description,
+  });
     }
     return MediumArticles;
   } catch (error) {
-    console.log(error.message);
-    return [];
+    throw new Error('Username/blogname does not exist or match with site name');
   }
 };
 
