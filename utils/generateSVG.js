@@ -1,6 +1,5 @@
 import selectorTheme from '../themes/index.js';
 import blogIcon from './blogIcon.js';
-import convertedThumbnail from './convertImage.js';
 const generateSVG = async (themed,blogname,url,title,date,author,thumbnail,description)=>{
   const selectedTheme=await selectorTheme(themed);
   const { title_color, icon_color, text_color, bg_color, border_color = "ffffff" } = selectedTheme;
