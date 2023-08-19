@@ -1,7 +1,7 @@
 import selectorTheme from '../themes/index.js';
-import blogIcon from './blogIcon.js';
-const generateSVG = async (themed,blogname,url,title,date,author,thumbnail,description)=>{
-  const selectedTheme=await selectorTheme(themed);
+import blogIcon from '../utils/blogIcons.js';
+const generateSVG = async (theme,blogname,url,title,date,author,thumbnail,description)=>{
+  const selectedTheme=await selectorTheme(theme);
   const { title_color, icon_color, text_color, bg_color, border_color = "ffffff" } = selectedTheme;
   const svgIcon = await blogIcon(blogname.toLowerCase(),icon_color);
     const svgCode = `
@@ -59,7 +59,7 @@ const generateSVG = async (themed,blogname,url,title,date,author,thumbnail,descr
             y="10"
             width="380"
             height="250"
-            href="${conThumbnail}"
+            href="${thumbnail}"
             mask="url(#rounded-mask)"
           />
           
@@ -99,6 +99,7 @@ const generateSVG = async (themed,blogname,url,title,date,author,thumbnail,descr
             y="355"
             font-family="Arial, sans-serif"
             font-size="14"
+            font-weight="bold"
             fill="${text_color}"
           >
             Date: ${date}
@@ -115,7 +116,8 @@ const generateSVG = async (themed,blogname,url,title,date,author,thumbnail,descr
               xmlns="http://www.w3.org/1999/xhtml"
               style="
                 font-family: Arial, sans-serif;
-                font-size: 13px;
+                font-size: 14px;
+                font-weight:bold;
                 color: ${text_color};
               "
             >
