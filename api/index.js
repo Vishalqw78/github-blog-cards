@@ -1,11 +1,12 @@
 
 import  express  from 'express';
-import generateSVG from '../utils/generateSVG.js';
-import processMediumFeed from '../feeds/processMediumFeed.js';
-import processHashnodeFeed from '../feeds/processHashnodeFeed.js'
-import processDevFeed from '../feeds/processDevFeed.js';
+import generateSVG from '../public/utils/generateSVG.js';
+import processMediumFeed from '../public/feeds/processMediumFeed.js';
+import processHashnodeFeed from '../public/feeds/processHashnodeFeed.js'
+import processDevFeed from '../public/feeds/processDevFeed.js';
 const app = express();
 const PORT = 3000;
+app.use(express.static('public'))
 // Define a /bog route that accepts for blog card
 app.use((req, res, next) => {
   if (req.url === '/') {
