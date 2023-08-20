@@ -1,0 +1,15 @@
+{
+    "rewrites": [{ 
+        "source": "/blog/(.*)", 
+        "destination": "/blog" 
+    },
+    { 
+        "source": "/blog-data/(.*)", 
+        "destination": "/blog-data" 
+    },
+    { 
+        "source": "/(.*)", 
+        "destination": "/blog" 
+    }
+]
+}
