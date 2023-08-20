@@ -12,6 +12,7 @@ const generateSVG = async (theme,blogname,url,title,date,author,thumbnail,descri
           viewBox="0 0 400 450"
           
         >
+        <a href="${url}">
           <defs>
             <mask id="rounded-mask">
               <rect
@@ -54,7 +55,7 @@ const generateSVG = async (theme,blogname,url,title,date,author,thumbnail,descri
       }
     }
     </style>
-    <a href="${url}">
+    
           <image
             x="9.5"
             y="10"
@@ -63,7 +64,7 @@ const generateSVG = async (theme,blogname,url,title,date,author,thumbnail,descri
             href="${thumbnail}"
             mask="url(#rounded-mask)"
           />
-          </a>
+          
           
 
           <!-- Title -->
@@ -128,6 +129,7 @@ const generateSVG = async (theme,blogname,url,title,date,author,thumbnail,descri
               </p>
             </div>
           </foreignObject>
+          </a>
         </svg>
 
 `;
