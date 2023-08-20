@@ -100,7 +100,7 @@ app.get('/blog', async (req, res) => {
       res.setHeader('Content-Type', 'image/svg+xml');
       //to generate the card
       const contentsvg = await generateSVG(theme, blogname, url, title, date, author, thumbnail, description);
-      res.status(200).send(contentsvg);
+      res.send(contentsvg);
       res.writeHead(301, { Location: url });
       res.end();
     } catch (error) {
