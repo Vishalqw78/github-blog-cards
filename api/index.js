@@ -101,8 +101,6 @@ app.get('/blog', async (req, res) => {
       //to generate the card
       const contentsvg = await generateSVG(theme, blogname, url, title, date, author, thumbnail, description);
       res.status(200).send(contentsvg);
-      res.writeHead(301, { Location: url });
-      res.end();
     } catch (error) {
       console.error(error);
       res.status(500).send('Internal Server Error');
