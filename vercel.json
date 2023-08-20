@@ -1,15 +1,19 @@
 {
-    "rewrites": [{ 
-        "source": "/blog/(.*)", 
-        "destination": "/blog" 
-    },
-    { 
-        "source": "/blog-data/(.*)", 
-        "destination": "/blog-data" 
-    },
-    { 
-        "source": "/(.*)", 
-        "destination": "/blog" 
-    }
-]
-}
+    "builds": [
+      {
+        "src": "public/**",
+        "use": "@vercel/static"
+      },
+      {
+        "src": "api/**/*.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/(.*)",
+        "destination": "/api/index.js" 
+      }
+    ]
+  }
+  
