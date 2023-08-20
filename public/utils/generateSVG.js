@@ -54,6 +54,7 @@ const generateSVG = async (theme,blogname,url,title,date,author,thumbnail,descri
       }
     }
     </style>
+    <a href="${url}">
           <image
             x="9.5"
             y="10"
@@ -62,6 +63,7 @@ const generateSVG = async (theme,blogname,url,title,date,author,thumbnail,descri
             href="${thumbnail}"
             mask="url(#rounded-mask)"
           />
+          </a>
           
 
           <!-- Title -->

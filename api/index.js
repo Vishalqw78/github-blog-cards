@@ -63,7 +63,7 @@ app.get('/blog-data', async (req, res) => {
 app.get('/blog', async (req, res) => {
     try {
       // Get parameters from the query string
-      let { theme = 'default',redirect="true", blogname = 'medium', index = 1, username = 'vishalqw78' } = req.query;
+      let { theme = 'default', blogname = 'medium', index = 1, username = 'vishalqw78' } = req.query;
       let Article;
   
       if (blogname === 'medium') {
@@ -98,9 +98,6 @@ app.get('/blog', async (req, res) => {
       //destructure the Article at ith index
       const { url, title, date, author, thumbnail, description } = Article[i];
       //for sending the file as a SVG 
-      if (req.query.redirect === 'true') {
-        return res.redirect(url);
-    }
       res.setHeader('Content-Type', 'image/svg+xml');
       //to generate the card
       const contentsvg = await generateSVG(theme, blogname, url, title, date, author, thumbnail, description);
