@@ -98,10 +98,22 @@ app.get('/blog', async (req, res) => {
       //destructure the Article at ith index
       const { url, title, date, author, thumbnail, description } = Article[i];
       //for sending the file as a SVG 
-      res.setHeader('Content-Type', 'image/svg+xml');
+      const dest = req.headers['sec-fetch-dest'] || req.headers['Sec-Fetch-Dest'];
+      const acceptHeader = req.headers['accept'];
+
+      const RenderImage = dest ? dest === 'image' : !/text\/html/.test(acceptHeader);
+
+      if (RenderImage) {
+          res.setHeader('Content-Type', 'image/svg+xml');
       //to generate the card
       const contentsvg = await generateSVG(theme, blogname, url, title, date, author, thumbnail, description);
       res.status(200).send(contentsvg);
+    }else {
+    
+      // Handle non-image request here (redirect, error response, etc.)
+      res.writeHead(301, { Location: url });
+      res.end();
+    }
     } catch (error) {
       console.error(error);
       res.status(500).send('Internal Server Error');
