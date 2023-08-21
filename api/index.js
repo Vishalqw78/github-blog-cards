@@ -97,10 +97,6 @@ app.get('/blog', async (req, res) => {
       let i=index-1;
       //destructure the Article at ith index
       const { url, title, date, author, thumbnail, description } = Article[i];
-      if (req.headers.referer) {
-        // Redirect to the URL
-        return res.redirect(url);
-    }
       //for sending the file as a SVG 
       res.setHeader('Content-Type', 'image/svg+xml');
       //to generate the card

@@ -34,15 +34,11 @@ Paste this into your markdown content.
 Change the `?username=` and `&blogname=` value to your GitHub username and blogname from options `medium` , `dev` and `hashnode`.
 
 ```md
-<a href="https://github-blog-cards.vercel.app/blog?username=vishalqw78&blogname=medium">
 <img src="https://github-blog-cards.vercel.app/blog?username=vishalqw78&blogname=medium"/>
-</a>
 ```
 ## Demo
 
-<a href="https://github-blog-cards.vercel.app/blog?username=vishalqw78&blogname=medium">
 <img src="https://github-blog-cards.vercel.app/blog?username=vishalqw78&blogname=medium"/>
-</a>
 
 ## Usage
 How to use the Github Blog Cards
@@ -67,44 +63,32 @@ There are Three Available Blog Site to fetch and display the Blog Post Cards.
 #### Medium Example
 
 ```md
-<a href="https://github-blog-cards.vercel.app/blog?username=vishalqw78&blogname=medium">
 <img src="https://github-blog-cards.vercel.app/blog?username=vishalqw78&blogname=medium"/>
-</a>
 ```
 
 That Card that rendered
 
-<a href="https://github-blog-cards.vercel.app/blog?username=vishalqw78&blogname=medium">
 <img src="https://github-blog-cards.vercel.app/blog?username=vishalqw78&blogname=medium"/>
-</a>
 
 #### Hashnode Example
 
 ```md
-<a href="https://github-blog-cards.vercel.app/blog?username=nevodavid10&blogname=hashnode">
 <img src="https://github-blog-cards.vercel.app/blog?username=nevodavid10&blogname=hashnode"/>
-</a>
 ```
 
 That Card that rendered
 
-<a href="https://github-blog-cards.vercel.app/blog?username=https://lo-victoria.com/&blogname=hashnode">
 <img src="https://github-blog-cards.vercel.app/blog?username=https://lo-victoria.com/&blogname=hashnode"/>
-</a>
 
 #### Dev Example
 
 ```md
-<a href="https://github-blog-cards.vercel.app/blog?username=corpcubite&blogname=dev">
 <img src="https://github-blog-cards.vercel.app/blog?username=corpcubite&blogname=dev"/>
-</a>
 ```
 
 That Card that rendered
 
-<a href="https://github-blog-cards.vercel.app/blog?username=corpcubite&blogname=dev">
 <img src="https://github-blog-cards.vercel.app/blog?username=corpcubite&blogname=dev"/>
-</a>
 
 ### Index
 
@@ -117,19 +101,13 @@ This will result in fetching the 2<sup>nd</sup> and 3<sup>rd</sup> last Blog fro
 > If the index is not available or greater than 10 it will result in fetching the Most Recent Blog.
 
 ```md
-<a href="https://github-blog-cards.vercel.app/blog?username=https://lo-victoria.com/&blogname=hashnode&index=2">
 <img src="https://github-blog-cards.vercel.app/blog?username=https://lo-victoria.com/&blogname=hashnode&index=2"/>
-</a>
-<a href="https://github-blog-cards.vercel.app/blog?username=https://lo-victoria.com/&blogname=hashnode&index=3">
+
 <img src="https://github-blog-cards.vercel.app/blog?username=https://lo-victoria.com/&blogname=hashnode&index=3"/>
-</a>
 ```
-<a href="https://github-blog-cards.vercel.app/blog?username=https://lo-victoria.com/&blogname=hashnode&index=2">
 <img src="https://github-blog-cards.vercel.app/blog?username=https://lo-victoria.com/&blogname=hashnode&index=2"/>
-</a>
-<a href="https://github-blog-cards.vercel.app/blog?username=https://lo-victoria.com/&blogname=hashnode&index=3">
+
 <img src="https://github-blog-cards.vercel.app/blog?username=https://lo-victoria.com/&blogname=hashnode&index=3"/>
-</a>
 
 
 ### Themes

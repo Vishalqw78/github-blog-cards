@@ -12,7 +12,7 @@ const generateSVG = async (theme,blogname,url,title,date,author,thumbnail,descri
           viewBox="0 0 400 450"
           
         >
-        <a href="${url}">
+        <a href="${url}" target="_blank">
           <defs>
             <mask id="rounded-mask">
               <rect
